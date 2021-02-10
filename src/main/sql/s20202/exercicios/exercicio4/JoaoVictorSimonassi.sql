@@ -7,7 +7,7 @@ Dicas:
 2. m = array_cat(m,array[linha]) inclui o vetor linha na matriz m
  */
 /**
- * Author:  joao.farias
+ * Author:  João Victor Simonassi
  * Created: 8 de fev de 2021
  */
 

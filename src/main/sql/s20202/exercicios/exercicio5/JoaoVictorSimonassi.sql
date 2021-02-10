@@ -12,6 +12,11 @@ A. A função determinante() deve ser recursiva.
  * Created: 8 de fev de 2021
  */
 
+DO $$ BEGIN
+    PERFORM drop_functions();
+    PERFORM drop_tables();
+END $$;
+
 CREATE OR REPLACE FUNCTION deleteRowAndColumn(i integer, j integer, M float[][]) RETURNS float[][] as $$
 DECLARE
     linesMat integer;
