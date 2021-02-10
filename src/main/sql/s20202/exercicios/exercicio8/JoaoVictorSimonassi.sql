@@ -1,10 +1,10 @@
 /* 
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
+ Escreva uma função PL/pgSQL que retorne uma relação com esquema {i,numero}
+contendo os n primeiros números da sequência de Fibonacci, onde n é informado como
+parâmetro.
  */
 /**
- * Author:  joao.farias
+ * Author:  Joao Victor Simonassi
  * Created: 10 de fev de 2021
  */
 
