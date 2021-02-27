@@ -20,7 +20,6 @@ INSERT INTO produto VALUES  (1,'MacBookPro 2021', 20000),
                             (4,'DELL G3', 6500),
                             (5,'Positivo Motion', 50);
 
-DROP FUNCTION IF EXISTS calcular_preco;
 CREATE OR REPLACE FUNCTION calcular_preco(cod_prods varchar[], qtds INTEGER[])
 RETURNS FLOAT AS $$
     DECLARE
