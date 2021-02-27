@@ -1,4 +1,4 @@
-/* 
+/*
  * To change this license header, choose License Headers in Project Properties.
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
@@ -50,9 +50,9 @@ INSERT INTO procedimento VALUES (1, 'Procedimento 1'),
 INSERT INTO atendimento VALUES  (1, '2021-02-27 04:00:00', 1, 1),
                                 (2, '2021-02-27 07:00:00', 2, 2),
                                 (3, '2021-02-27 08:00:00', 2, 2),
-                                (4, '2021-02-27 22:30:00', 1, 4),            
+                                (4, '2021-02-27 22:30:00', 1, 4),
                                 (5, '2021-02-27 23:00:00', 1, 3);
-         
+
 
 CREATE OR REPLACE FUNCTION generate_fato()
 RETURNS VOID AS $$
@@ -68,7 +68,7 @@ RETURNS VOID AS $$
                                              WHERE cliente.id = id_cliente);
         countUrgencias CURSOR(id_cliente BIGINT, datah TIMESTAMP) FOR SELECT COUNT(*)
                                              FROM atendimento
-                                             WHERE cliente = id_cliente AND 
+                                             WHERE cliente = id_cliente AND
                                             "data" < datah AND
                                             EXTRACT(HOUR FROM "data") >= 22;--Isso está correto?
     BEGIN
@@ -86,5 +86,6 @@ RETURNS VOID AS $$
         END LOOP;
     END;
 $$ LANGUAGE plpgsql;
+
 SELECT generate_fato();
 SELECT * FROM fato;
