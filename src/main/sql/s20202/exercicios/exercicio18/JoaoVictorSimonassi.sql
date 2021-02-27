@@ -8,10 +8,10 @@
  * Created: 27 de fev de 2021
  */
 
-DROP TABLE IF EXISTS cliente CASCADE;
-DROP TABLE IF EXISTS procedimento CASCADE;
-DROP TABLE IF EXISTS atendimento CASCADE;
-DROP TABLE IF EXISTS fato CASCADE;
+DO $$ BEGIN
+    PERFORM drop_functions();
+    PERFORM drop_tables();
+END $$;
 
 create table cliente(
     id bigint primary key,
@@ -54,8 +54,7 @@ INSERT INTO atendimento VALUES  (1, '2021-02-27 04:00:00', 1, 1),
                                 (5, '2021-02-27 23:00:00', 1, 3);
          
 
-DROP FUNCTION IF EXISTS popular_fato;
-CREATE OR REPLACE FUNCTION popular_fato()
+CREATE OR REPLACE FUNCTION generate_fato()
 RETURNS VOID AS $$
     DECLARE
         nUrgencias INTEGER;
@@ -87,5 +86,5 @@ RETURNS VOID AS $$
         END LOOP;
     END;
 $$ LANGUAGE plpgsql;
-SELECT popular_fato();
+SELECT generate_fato();
 SELECT * FROM fato;
