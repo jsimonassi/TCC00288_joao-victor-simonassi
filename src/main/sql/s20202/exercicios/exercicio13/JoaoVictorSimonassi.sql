@@ -83,7 +83,6 @@ RETURNS TABLE(Time_ TEXT, Pontos INTEGER, V INTEGER, E INTEGER, D INTEGER) AS $$
             (SELECT time1 FROM jogo WHERE campeonato = cod) OR
             sigla IN (SELECT time2 FROM jogo WHERE campeonato = cod);		
     BEGIN
-        DROP TABLE IF EXISTS ans;
         CREATE TEMPORARY TABLE ans(Time_ TEXT, Pontos INTEGER, V INTEGER,
                                     E INTEGER, D INTEGER);
 
