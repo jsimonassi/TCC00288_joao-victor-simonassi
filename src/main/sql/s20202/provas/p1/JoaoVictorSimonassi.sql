@@ -155,4 +155,4 @@ RETURNS TABLE(perguntaID int, frequencia float[][]) AS $$
     END;
 $$ LANGUAGE plpgsql;
 
-select resultado(1,null,null);
+select resultado(1);
