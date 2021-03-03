@@ -132,7 +132,7 @@ RETURNS TABLE(perguntaID int, frequencia float[][]) AS $$
         linha float[];
         totalRespostas integer;
     BEGIN
-        
+
         CREATE TEMPORARY TABLE ans(perguntaID integer, frequencia float[][]);
 
         FOR perguntaCorrente IN select * from pergunta LOOP -- Acha pergunta
@@ -155,4 +155,4 @@ RETURNS TABLE(perguntaID int, frequencia float[][]) AS $$
     END;
 $$ LANGUAGE plpgsql;
 
-select resultado(1);
+select resultado(1,null,null);
