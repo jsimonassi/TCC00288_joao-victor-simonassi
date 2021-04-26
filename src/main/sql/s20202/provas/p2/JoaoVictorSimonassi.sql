@@ -58,7 +58,7 @@ begin
 end;
 $$ language plpgsql;
 
-CREATE TRIGGER trigger1
+CREATE TRIGGER checkUnique
 AFTER INSERT OR UPDATE ON Concerto FOR EACH ROW
 EXECUTE PROCEDURE checkUnique();
 
@@ -70,7 +70,7 @@ begin
 end;
 $$ language plpgsql;
 
-CREATE TRIGGER trigger2
+CREATE TRIGGER auxTrigger
 BEFORE UPDATE OR DELETE ON Artista FOR EACH STATEMENT
 EXECUTE PROCEDURE auxFunction();
 
@@ -82,7 +82,7 @@ begin
 end;
 $$ language plpgsql;
 
-CREATE TRIGGER trigger3
+CREATE TRIGGER registerArtist
 AFTER UPDATE OR DELETE ON Artista FOR EACH ROW
 EXECUTE PROCEDURE registerArtist();
 
@@ -105,7 +105,7 @@ begin
 end;
 $$ language plpgsql;
 
-CREATE TRIGGER trigger4
+CREATE TRIGGER checkActivity
 AFTER UPDATE OR DELETE ON Artista FOR EACH STATEMENT
 EXECUTE PROCEDURE checkActivity();
 
