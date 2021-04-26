@@ -35,13 +35,13 @@ CREATE TABLE Concerto(
 
 INSERT INTO Atividade values (1, 'cantor');
 INSERT INTO Atividade values (2, 'guitarrista');
-INSERT INTO Atividade values (2, 'pianista');
+INSERT INTO Atividade values (3, 'pianista');
 INSERT INTO Artista values (1, 'Axl Rose', 1);
 INSERT INTO Artista values (2, 'Slash', 2);
 INSERT INTO Artista values (3, 'Chopin', 2);
 INSERT INTO Arena values (1, 'Arena - UFF');
 INSERT INTO Arena values (2, 'Maracanã');
-INSERT INTO Arena values (2, 'Vivo Rio');
+INSERT INTO Arena values (3, 'Vivo Rio');
 
 CREATE OR REPLACE FUNCTION checkUnique() RETURNS TRIGGER AS $$
 declare
